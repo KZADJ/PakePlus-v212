@@ -17,3 +17,12 @@ const hookClick = (e) => {
         console.log('not handle origin', origin)
     }
 }
+
+window.open = function (url, target, features) {
+    console.log('open', url, target, features)
+    location.href = url
+}
+
+document.addEventListener('click', hookClick,
+                          { capture: true }
+                         )
